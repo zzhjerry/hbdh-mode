@@ -26,17 +26,28 @@
 
 ;;; Commentary:
 ;;
-;; This package provides a function `hbdh-activate-on-region' to
-;; highlight current active region by dimming text outside of it. To
-;; deactivate this visual effect, invoke `hbdh-deactivate' or
-;; `keyboard-quit' (bound to `C-g' by default).
+;; `hdbh-mode' is a minor mode that highlights current active region
+;; by dimming text outside of it. When this minor mode is on, there
+;; are two ways to activate this behavior.
 ;;
-;; When `hbdh-mode' minor mode is on, you can also specify
+;; One way is to call `hbdh-activate-on-region' command when a
+;; region is active. To deactivate it, invoke `hbdh-deactivate' or
+;; `keyboard-quit' command (bound to `C-g' by default).
+;;
+;; Another option is to specify a value for
 ;; `hbdh-activation-commands', which is a list of commands that
 ;; triggers `hbdh-activate-on-region' automatically. These commands
 ;; should generate or change the range of a region. In this case,
 ;; invoking any other commands that are not in the list will
 ;; automatically invoke `hbdh-deactivate'.
+;;
+;; For example:
+;;
+;; (setq hbdh-activation-commands '(mark-defun))
+;;
+;; In this case, when you call `mark-defun' (bound by "C-M-h"), the
+;; text outside of current highlighted function will be dimmed out (if
+;; you set `hbdh-dim-color' correctly)
 
 ;;; Code:
 
