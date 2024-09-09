@@ -23,7 +23,7 @@ git clone https://github.com/zzhjerry/hbdh-mode.git ~/dev/hbdh-mode
 2. Use `use-pacakge` to load this package
 
 ```emacs-lisp
-(use-package hbdh-mode
+(use-package hbdh
   :load-path "~/dev/hbdh-mode"
   :config
   (setq hbdh-activation-commands '(mark-defun))
@@ -52,7 +52,7 @@ When you call `mark-defun` (bound by `C-M-h`), the text outside of current highl
 
 This is the foreground color that's used for dimmed texts. By default it's a color name called "dark gray".  You can invoke `list-color-display` to see available colors names.
 
-If the value is a face name, the face's foreground color will be used. e.g.
+If the value is a face name, the face's foreground color will be used. Use `list-faces-display` to see available options.
 
 If the value is a function, the return value of this function is used as the color.
 
